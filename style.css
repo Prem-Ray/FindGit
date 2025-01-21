@@ -1,0 +1,220 @@
+*{
+    margin:0 ;
+    padding:0 ;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    overflow-x: hidden ;
+    overflow-y: hidden ;
+    height:100vh ;
+    width:100vw ;
+    /* background-color: #041822; */
+    background-color: #fff;
+    position: relative;
+}
+
+.container{
+    width:1050px ;
+    max-width:1200px ;
+    display:flex ;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    margin:60px auto ;
+    color:#041822 ;
+    /* color: #bff4e7; */
+} 
+
+#size{
+    display:flex ;
+    justify-content: space-between;
+    width:950px ;
+    margin:1.08rem ;
+    background-color: 	#87CEEB;
+    /* background-color: #4DA1A9; */
+    /* background-color: #042525 ; */
+}
+
+.top-container{
+    position: relative ;
+    padding:1.03rem ;
+    border-radius: 12px;
+}
+
+.heading{
+    font-weight:bold;
+    font-size:2rem ;
+}
+
+.setdarklightmode{
+    position: absolute;
+    font-weight:bold;
+    font-size:1.2rem ;
+    top:1.2rem ;
+    right:1rem  ;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.darklightimg{
+    color:#041822 ;
+    /* color:white ; */
+    margin-left:1rem ;
+}
+
+.search-container{
+    font-size:1.2rem ;
+    position: relative;
+    padding: 1.3rem 2.33rem ;
+    color:white ;
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 12px;
+}
+
+.searchimg{
+    position: absolute ;
+    top:1.8rem ;
+    left:14px ;
+}
+
+input {
+    background: none;
+    border: none;
+    color:#041822 ;
+    /* color: white; */
+    font-size:1.2rem ;
+    font-weight:250 ;
+    padding-left:8px ;
+}
+
+input::placeholder.set {
+    color:#212121 ;
+    /* color: white; */
+    font-size:0.96rem ;
+    font-weight:250 ;
+    letter-spacing: 1.2px;
+    padding:2px 4px ;
+}
+
+.not-found{
+    display:none ;
+}
+
+.not-found.active{
+    display: block ;
+}
+
+
+.dev-container{
+    display: none ;
+}
+
+.dev-container.active{
+    display: block;
+    width:950px ;
+    color:#212121 ;
+    background-color: #fff;
+    /* background-color: #042525 ; */
+    /* background-color: #383535; */
+    position: relative;
+    height:405px ;
+    position: relative ;
+    border-radius: 12px ;
+}
+
+.profileLogo{
+    max-width:25px ;
+}
+
+.main-section{
+    position: absolute;
+    margin-left: 12rem ;
+    left:3.3rem ; 
+    top:3.4rem ;
+    padding-right: 3.3rem ;
+    /* padding-bottom:2.2rem ; */
+}
+
+.logo{
+    border-radius: 50% ;
+    position: absolute;
+    left:2.3rem ;
+    top:3rem ;
+}
+
+.para1{
+    display: flex ;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12.3rem;
+}
+
+#name{
+    font-size:1.4rem ;
+    font-weight: bolder;
+}
+
+#joiningDate{
+    font-size:1rem ;
+}
+
+#username{
+    font-size:1rem ;
+    color:rgba(25, 202, 229, 0.717) ;
+    cursor: pointer;
+}
+
+#about{
+    margin:1.2rem 0 ;
+    font-weight: 300;
+}
+
+#connections{
+    color:aliceblue ;
+    background-color: #023925d6;  
+    border-radius: 19px ;
+}
+
+#tableData{
+    margin-left:1rem ;
+    border-spacing: 20px;
+}
+
+#contacts{
+    margin-top:1.9rem ;
+    display:grid ;
+    grid-template-columns: auto auto;
+    grid-template-rows: 2;
+    gap:10px ;
+}
+
+#link{
+    display: flex ;
+    flex-direction: row ;
+    justify-content: flex-start ;
+    align-items: center;
+    gap:0.23rem ;
+}
+
+button{
+    border:none ;
+    background-color: #0c6041d6;
+    /* background-color: #66c726; */
+    color:white ;
+    padding:8px 9px ;
+    border-radius: 12px  ;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+th{
+    text-align: center;
+}
+td{
+    text-align: center;
+}

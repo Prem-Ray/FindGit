@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FindGit</title>
+    <link rel="icon" type="image/png" href="./image/coder.png">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+
+        <div class="container">
+
+            <div class="top-container" id="size">
+                <span class="heading">FindGit</span>
+                <!-- <img src="./image/light-svgrepo-com.svg" alt=""> -->
+                <span class="setdarklightmode">Dark <img src="./image/moon-dark-theme-svgrepo-com.svg" height="24" width="24" class="darklightimg" alt=""> </span>
+            </div>
+
+            <div class="search-container" id="size">
+                <span><img class="searchimg" src="./image/search-svgrepo-com.svg" height="17" width="17" alt=""> <input type="text" placeholder="Enter a GitHub User name..."></span>
+                <button>Search</button>
+            </div>
+
+            <div class="not-found">
+                <img src="./image/not-found.png" height="380" width="380" alt="">
+            </div>
+
+            <div class="dev-container" >
+                <div class="profileLogo">
+                    <img class="logo" src="./image/premray.jpg" height="125" width="125" alt="">
+                </div>
+                <div class="main-section">
+                    <p class="para1">
+                        <span id="name">Premanshu Ray</span>
+                        <span id="joiningDate">Joined 17 Jun 2023</span>
+                    </p>
+                    <p id="username">@premanshuray</p>
+
+                    <div id="about">
+                        graduated from STCET , Kolkata  ||  Web Developer ||
+                        Coder  ||  ECE Engineer
+                    </div>
+
+                    <div id="connections">
+                        <table id="tableData">
+                            <thead>
+                                <th id="repos">Repos</th>
+                                <th id="followers">Followers</th>
+                                <th id="following">Following</th>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td id="reposval">11</td>
+                                    <td id="followersval">3526</td>
+                                    <td id="followingval">1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                        <div id="contacts">
+                            <span id="link">
+                                <img src="./image/location-pin-alt-1-svgrepo-com.svg" height="16" width="16" alt="">
+                                <span id="city">Kolkata</span>
+                            </span>
+                            <span id="link">
+                                <img src="./image/twitter-svgrepo-com.svg" height="16" width="16" alt="">
+                                <span id="twitter">Twitter</span>
+                            </span>
+                            <span id="link">
+                                <img src="./image/link-svgrepo-com.svg" height="16" width="16" alt="">
+                                <span id="blog">Not available</span>
+                            </span>
+                            <span id="link">
+                                <img src="./image/linkedin-svgrepo-com.svg" height="16" width="16" alt="">
+                                <span id="linkedIn">LinkedIn</span>
+                            </span>
+                        </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

@@ -132,6 +132,7 @@ input::placeholder.set {
 }
 
 .main-section{
+    width:720px ;
     position: absolute;
     margin-left: 12rem ;
     left:3.3rem ; 

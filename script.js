@@ -46,12 +46,21 @@ async function datasearch(api) {
         let [cityName] = val.location.split(',');
         city.innerText = cityName;
     } else {
-        city.innerText = '';
+        city.innerText = "Not Available";
     }
 
-    twitter.innerText = val.twitter_username;
-    console.log(twitter.innerText);
-    blog.innerText = val.blog;
+    if(val.twitter_username){
+        twitter.innerText = val.twitter_username;
+    } else{
+        twitter.innerText = "Not Available" ;
+    }
+    
+    if(val.blog){
+        blog.innerText = val.blog;
+    } else {
+        blog.innerText = "Not Available";
+    }
+
     followersval.innerText = val.followers;
     followingval.innerText = val.following;
     reposval.innerText = val.public_repos;

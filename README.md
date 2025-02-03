@@ -10,4 +10,5 @@ User Insights: Display repositories, followers, and social links in an organized
 
 🚀 About the Project:
 This project showcases my expertise in front-end development, API handling, and error management. It’s a simple yet powerful tool to explore GitHub user profiles with an intuitive and efficient interface.
-🔗 Check it out: https://lnkd.in/gW_pSaUv
+
+🔗 Check it out: https://findgitcoder.netlify.app/

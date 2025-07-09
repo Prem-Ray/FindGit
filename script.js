@@ -75,3 +75,16 @@ setdarklightmode.addEventListener('click', () => {
         ? `Dark <img src="./image/moon-dark-theme-svgrepo-com.svg" height="24" width="24" class="darklightimg" alt="">`
         : `Light <img src="./image/light-svgrepo-com.svg" height="24" width="24" class="darklightimg" alt="">`;
 });
+const toggleBtn = document.getElementById("themeToggleBtn");
+
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+
+  // Toggle emoji
+  if (document.body.classList.contains("dark-mode")) {
+    toggleBtn.textContent = "☀️"; // light mode icon
+  } else {
+    toggleBtn.textContent = "🌙"; // dark mode icon
+  }
+});
+

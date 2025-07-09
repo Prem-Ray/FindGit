@@ -1,6 +1,6 @@
 // Input and display elements
-const input = document.querySelector('input');
-const search = document.querySelector('button');
+const input = document.getElementById('searchInput');
+const searchForm = document.getElementById('searchForm');
 const image = document.querySelector('.logo');
 const ProfileName = document.querySelector('#name');
 const joiningDate = document.querySelector('#joiningDate');
@@ -15,7 +15,6 @@ const blog = document.querySelector('#blog');
 const linkedIn = document.querySelector('#linkedIn');
 const toggleBtn = document.getElementById("themeToggleBtn");
 
-// GitHub API base URL
 const url = "https://api.github.com/users";
 
 // Hide profile initially
@@ -27,18 +26,15 @@ async function datasearch(api) {
         const response = await fetch(api);
         const val = await response.json();
 
-        // Handle errors or empty input
         if (!input.value.trim() || val.message === "Not Found") {
             document.querySelector('.dev-container').classList.remove('active');
             document.querySelector('.not-found').classList.add('active');
             return;
         }
 
-        // Show profile container
         document.querySelector('.not-found').classList.remove('active');
         document.querySelector('.dev-container').classList.add('active');
 
-        // Fill user info
         ProfileName.innerText = val.name || "Not Available";
         userName.innerText = val.login || "Not Available";
         image.src = val.avatar_url;
@@ -46,11 +42,10 @@ async function datasearch(api) {
         const [year, month, day] = date.split('-');
         joiningDate.innerText = `Joined ${day}/${month}/${year}`;
         about.innerText = `${val.bio || 'No bio'} || ${val.company || 'No company'} || ${val.location || 'No location'}`;
-
         city.innerText = val.location ? val.location.split(',')[0] : "Not Available";
         twitter.innerText = val.twitter_username || "Not Available";
         blog.innerText = val.blog || "Not Available";
-        linkedIn.innerText = "Not Available"; // GitHub doesn't provide LinkedIn
+        linkedIn.innerText = "Not Available";
 
         reposval.innerText = val.public_repos;
         followersval.innerText = val.followers;
@@ -60,20 +55,14 @@ async function datasearch(api) {
     }
 }
 
-// Search button click
-search.addEventListener('click', () => {
+// ✅ Use form submit event (works for both Enter key and click)
+searchForm.addEventListener('submit', (e) => {
+    e.preventDefault(); // prevent page reload
     const api = `${url}/${input.value.trim()}`;
     datasearch(api);
 });
 
-// Search on Enter key
-input.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-        search.click();
-    }
-});
-
-// Theme toggle button (emoji 🌙 / ☀️)
+// ✅ Theme Toggle (emoji-based)
 window.addEventListener("DOMContentLoaded", () => {
     toggleBtn.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
 });

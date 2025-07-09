@@ -1,4 +1,3 @@
-/* Base Reset */
 * {
   margin: 0;
   padding: 0;
@@ -47,7 +46,7 @@
   color: #1e293b;
   cursor: pointer;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   transition: transform 0.2s ease, background-color 0.3s;
 }
 .toggle-theme:hover {
@@ -120,6 +119,7 @@
   height: 120px;
   border-radius: 50%;
   border: 3px solid #c084fc;
+  object-fit: cover;
 }
 
 .main-section {
@@ -151,12 +151,14 @@
   background-color: #e0f2fe;
   padding: 1rem;
   border-radius: 8px;
+  overflow-x: auto;
 }
 
 #tableData {
   width: 100%;
   border-collapse: collapse;
   text-align: center;
+  min-width: 300px;
 }
 #tableData th,
 #tableData td {
@@ -251,17 +253,30 @@ body.dark-mode .toggle-theme:hover {
     flex-direction: column;
     gap: 0.5rem;
   }
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+  #tableData th,
+  #tableData td {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
 }
 @media (max-width: 480px) {
   .heading {
     font-size: 1.5rem;
   }
   .logo {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
   }
   .search-container input,
   .search-container button {
     font-size: 0.95rem;
+  }
+  #contacts {
+    flex-direction: column;
+    gap: 0.75rem;
   }
 }

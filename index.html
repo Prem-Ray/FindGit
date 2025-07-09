@@ -1,91 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FindGit</title>
-    <link rel="icon" type="image/png" href="./image/coder.png">
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FindGit</title>
+  <link rel="icon" type="image/png" href="./image/coder.png" />
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-    
-    <div class="wrapper">
+  <div class="wrapper">
+    <div class="container">
 
-        <div class="container">
+      <!-- Header with Title & Theme Toggle -->
+      <div class="top-container" id="size">
+        <span class="heading">FindGit</span>
+        <span class="setdarklightmode">
+          Dark
+          <img src="./image/moon-dark-theme-svgrepo-com.svg" height="24" width="24" class="darklightimg" alt="Toggle Dark Mode" />
+        </span>
+      </div>
 
-            <div class="top-container" id="size">
-                <span class="heading">FindGit</span>
-                <!-- <img src="./image/light-svgrepo-com.svg" alt=""> -->
-                <span class="setdarklightmode">Dark <img src="./image/moon-dark-theme-svgrepo-com.svg" height="24" width="24" class="darklightimg" alt=""> </span>
-            </div>
+      <!-- Search Section -->
+      <div class="search-container" id="size">
+        <span>
+          <img class="searchimg" src="./image/search-svgrepo-com.svg" height="17" width="17" alt="Search Icon" />
+          <input type="text" placeholder="Enter a GitHub username..." />
+        </span>
+        <button>Search</button>
+      </div>
 
-            <div class="search-container" id="size">
-                <span><img class="searchimg" src="./image/search-svgrepo-com.svg" height="17" width="17" alt=""> <input type="text" placeholder="Enter a GitHub User name..."></span>
-                <button>Search</button>
-            </div>
+      <!-- Error Display -->
+      <div class="not-found">
+        <img src="./image/not-found.png" height="380" width="380" alt="User Not Found" />
+      </div>
 
-            <div class="not-found">
-                <img src="./image/not-found.png" height="380" width="380" alt="">
-            </div>
-
-            <div class="dev-container" >
-                <div class="profileLogo">
-                    <img class="logo" src="./image/premray.jpg" height="125" width="125" alt="">
-                </div>
-                <div class="main-section">
-                    <p class="para1">
-                        <span id="name"></span>
-                        <span id="joiningDate"></span>
-                    </p>
-                    <p id="username"></p>
-
-                    <div id="about">
-                    </div>
-
-                    <div id="connections">
-                        <table id="tableData">
-                            <thead>
-                                <th id="repos">Repos</th>
-                                <th id="followers">Followers</th>
-                                <th id="following">Following</th>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td id="reposval"></td>
-                                    <td id="followersval"></td>
-                                    <td id="followingval"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                        <div id="contacts">
-                            <span id="link">
-                                <img src="./image/location-pin-alt-1-svgrepo-com.svg" height="16" width="16" alt="">
-                                <span id="city">Not available</span>
-                            </span>
-                            <span id="link">
-                                <img src="./image/twitter-svgrepo-com.svg" height="16" width="16" alt="">
-                                <span id="twitter">Not available</span>
-                            </span>
-                            <span id="link">
-                                <img src="./image/link-svgrepo-com.svg" height="16" width="16" alt="">
-                                <span id="blog">Not available</span>
-                            </span>
-                            <span id="link">
-                                <img src="./image/linkedin-svgrepo-com.svg" height="16" width="16" alt="">
-                                <span id="linkedIn">Not available</span>
-                            </span>
-                        </div>
-                </div>
-            </div>
-
+      <!-- Developer Profile Display -->
+      <div class="dev-container">
+        <div class="profileLogo">
+          <img class="logo" src="./image/premray.jpg" height="125" width="125" alt="User Profile Picture" />
         </div>
+        <div class="main-section">
+          <p class="para1">
+            <span id="name"></span>
+            <span id="joiningDate"></span>
+          </p>
+          <p id="username"></p>
+
+          <div id="about"></div>
+
+          <div id="connections">
+            <table id="tableData">
+              <thead>
+                <tr>
+                  <th id="repos">Repos</th>
+                  <th id="followers">Followers</th>
+                  <th id="following">Following</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td id="reposval"></td>
+                  <td id="followersval"></td>
+                  <td id="followingval"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Contact Info -->
+          <div id="contacts">
+            <span id="link">
+              <img src="./image/location-pin-alt-1-svgrepo-com.svg" alt="Location" />
+              <span id="city">Not available</span>
+            </span>
+            <span id="link">
+              <img src="./image/twitter-svgrepo-com.svg" alt="Twitter" />
+              <span id="twitter">Not available</span>
+            </span>
+            <span id="link">
+              <img src="./image/link-svgrepo-com.svg" alt="Blog" />
+              <span id="blog">Not available</span>
+            </span>
+            <span id="link">
+              <img src="./image/linkedin-svgrepo-com.svg" alt="LinkedIn" />
+              <span id="linkedIn">Not available</span>
+            </span>
+          </div>
+        </div>
+      </div>
 
     </div>
+  </div>
 
-    <script src="./script.js"></script>
-    
+  <script src="./script.js"></script>
 </body>
 </html>

@@ -1,3 +1,4 @@
+/* Base Reset */
 * {
   margin: 0;
   padding: 0;
@@ -91,6 +92,11 @@
 .not-found {
   display: none;
   text-align: center;
+}
+.not-found img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
 }
 .not-found.active {
   display: block;
@@ -262,6 +268,13 @@ body.dark-mode .toggle-theme:hover {
     font-size: 0.9rem;
     padding: 0.5rem;
   }
+  #connections {
+    overflow-x: auto;
+  }
+  .not-found img {
+    width: 100%;
+    height: auto;
+  }
 }
 @media (max-width: 480px) {
   .heading {
@@ -278,5 +291,9 @@ body.dark-mode .toggle-theme:hover {
   #contacts {
     flex-direction: column;
     gap: 0.75rem;
+  }
+  #tableData th,
+  #tableData td {
+    font-size: 0.85rem;
   }
 }

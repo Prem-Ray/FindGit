@@ -1,27 +1,53 @@
+:root {
+    --bg-light: #f5f7fa;
+    --text-light: #041822;
+    --accent-light: #87CEEB;
+    --card-light: #ffffff;
+    --button-light: #0c6041d6;
+
+    --bg-dark: #0e141b;
+    --text-dark: #ffffff;
+    --accent-dark: #1e90ff;
+    --card-dark: #1c1f26;
+    --button-dark: #2f9e44;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Segoe UI', sans-serif;
+    transition: background 0.3s, color 0.3s;
+}
+
 .wrapper {
     overflow-x: hidden;
-    overflow-y: auto;
     min-height: 100vh;
     width: 100%;
-    background-color: #fff;
+    background-color: var(--bg-light);
     position: relative;
+}
+
+.dark-mode .wrapper {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
 }
 
 .container {
     width: 90%;
     max-width: 1200px;
+    margin: 60px auto;
+    color: var(--text-light);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin: 60px auto;
-    color: #041822;
+}
+
+.dark-mode .container {
+    color: var(--text-dark);
 }
 
 #size {
@@ -29,16 +55,20 @@
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
-    margin: 1rem;
-    background-color: #87CEEB;
+    margin: 1rem 0;
+    background-color: var(--accent-light);
     border-radius: 12px;
     padding: 1rem;
 }
 
+.dark-mode #size {
+    background-color: var(--accent-dark);
+}
+
 .top-container {
-    position: relative;
     padding: 1rem;
     border-radius: 12px;
+    width: 100%;
 }
 
 .heading {
@@ -49,30 +79,40 @@
 
 .setdarklightmode {
     position: absolute;
-    font-weight: bold;
-    font-size: 1.2rem;
     top: 1rem;
     right: 1rem;
     display: flex;
     align-items: center;
     cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .darklightimg {
-    color: #041822;
     margin-left: 1rem;
+    color: var(--text-light);
+}
+
+.dark-mode .darklightimg {
+    color: var(--text-dark);
 }
 
 .search-container {
-    font-size: 1rem;
-    padding: 1rem 1.5rem;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 1.1rem;
+    position: relative;
+    padding: 1rem 2rem;
+    background: var(--accent-light);
     border-radius: 12px;
     width: 100%;
-    position: relative;
+    max-width: 600px;
+    margin: 1rem 0;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.dark-mode .search-container {
+    background-color: var(--accent-dark);
 }
 
 .searchimg {
@@ -83,41 +123,45 @@
 }
 
 input {
-    background: none;
+    background: transparent;
     border: none;
-    color: #041822;
-    font-size: 1rem;
-    font-weight: 400;
-    padding-left: 2.5rem;
+    color: var(--text-light);
+    font-size: 1.1rem;
+    padding-left: 2rem;
     width: 100%;
+}
+
+.dark-mode input {
+    color: var(--text-dark);
 }
 
 input::placeholder.set {
-    color: #212121;
-    font-size: 0.96rem;
-    letter-spacing: 1.2px;
+    color: #666;
+    font-size: 1rem;
 }
 
-.not-found {
-    display: none;
-}
-.not-found.active {
-    display: block;
+.dark-mode input::placeholder.set {
+    color: #ccc;
 }
 
+.not-found,
 .dev-container {
     display: none;
 }
+
+.not-found.active,
 .dev-container.active {
     display: block;
     width: 100%;
-    color: #212121;
-    background-color: #fff;
-    position: relative;
-    min-height: 400px;
+    background: var(--card-light);
+    color: var(--text-light);
     border-radius: 12px;
     padding: 1rem;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.dark-mode .dev-container.active {
+    background: var(--card-dark);
+    color: var(--text-dark);
 }
 
 .profileLogo {
@@ -126,32 +170,28 @@ input::placeholder.set {
 
 .main-section {
     width: 100%;
-    margin-top: 1rem;
     position: relative;
-    padding: 1rem;
+    margin-top: 1rem;
 }
 
 .logo {
     border-radius: 50%;
-    position: absolute;
-    left: 1rem;
-    top: 1rem;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-bottom: 1rem;
 }
 
 .para1 {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
-    margin-left: 70px;
 }
 
 #name {
-    font-size: 1.3rem;
-    font-weight: bold;
+    font-size: 1.5rem;
+    font-weight: bolder;
 }
 
 #joiningDate, #username {
@@ -159,7 +199,7 @@ input::placeholder.set {
 }
 
 #username {
-    color: rgba(25, 202, 229, 0.717);
+    color: var(--accent-dark);
     cursor: pointer;
 }
 
@@ -169,50 +209,59 @@ input::placeholder.set {
 }
 
 #connections {
-    color: aliceblue;
-    background-color: #023925d6;
-    border-radius: 19px;
+    color: white;
+    background-color: #1b5e20;
     padding: 0.5rem 1rem;
+    border-radius: 19px;
+    display: inline-block;
+    margin: 1rem 0;
 }
 
 #tableData {
-    margin-left: 1rem;
     width: 100%;
-    border-spacing: 10px;
     overflow-x: auto;
+    border-spacing: 16px;
 }
 
 #contacts {
-    margin-top: 1.5rem;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
 }
 
 #link {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
     align-items: center;
     gap: 0.5rem;
 }
 
 button {
     border: none;
-    background-color: #0c6041d6;
+    background-color: var(--button-light);
     color: white;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1.2rem;
     border-radius: 12px;
-    cursor: pointer;
     font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dark-mode button {
+    background-color: var(--button-dark);
+}
+
+button:hover {
+    opacity: 0.9;
 }
 
 th, td {
     text-align: center;
-    word-break: break-word;
+    padding: 0.5rem;
 }
 
-/* Responsive Media Queries */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
     .heading {
         font-size: 1.5rem;
@@ -221,21 +270,26 @@ th, td {
     .para1 {
         flex-direction: column;
         align-items: flex-start;
-        margin-left: 0;
     }
 
-    .logo {
-        position: relative;
-        left: 0;
-        top: 0;
-        margin-bottom: 1rem;
+    .search-container {
+        flex-direction: column;
+        padding: 1rem;
     }
 
     .setdarklightmode {
         top: 0.5rem;
         right: 0.5rem;
-        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .heading {
+        font-size: 1.3rem;
     }
 
-    .search-container {
-        flex-direction
+    button {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+}

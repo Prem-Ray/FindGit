@@ -77,14 +77,24 @@ setdarklightmode.addEventListener('click', () => {
 });
 const toggleBtn = document.getElementById("themeToggleBtn");
 
+// On page load, set correct emoji based on current theme
+window.addEventListener("DOMContentLoaded", () => {
+  if (document.body.classList.contains("dark-mode")) {
+    toggleBtn.textContent = "☀️";
+  } else {
+    toggleBtn.textContent = "🌙";
+  }
+});
+
 toggleBtn.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
 
   // Toggle emoji
   if (document.body.classList.contains("dark-mode")) {
-    toggleBtn.textContent = "☀️"; // light mode icon
+    toggleBtn.textContent = "☀️"; // Sun for dark mode
   } else {
-    toggleBtn.textContent = "🌙"; // dark mode icon
+    toggleBtn.textContent = "🌙"; // Moon for light mode
   }
 });
+
 
